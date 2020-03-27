@@ -1,0 +1,29 @@
+void bubble(int a[],int n){
+    
+    for(int i=0;i<n-1;i++)
+    
+    {
+        for(int j=0;j<n-1-i;j++){
+            if(a[j+1]<a[j]){
+            int temp;
+            temp=a[j];
+            a[j]=a[j+1];
+            a[j+1]=temp;
+            }
+        }
+    }
+    for(int k=0;k<n;k++)
+    printf("\nThe sorted array is : %d\n", a[k]);
+}
+
+void main(){
+    int n;
+    printf("Enter the number of elements of array");
+    scanf("%d", &n);
+    int a[n];
+    printf("Enter the elements into array");
+    for(int i=0;i<n;i++){
+        scanf("%d", &a[i]);
+    }
+    bubble(a,n);
+}
