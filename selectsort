@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void selectsort(int a[],int n){
+    int temp,i,j,min;
+    for(i=0;i<n-1;i++){
+        min=i;
+        for(j=i+1;j<n;j++)
+            if(a[j]<a[min])
+            min=j;
+                temp=a[min];
+                a[min]=a[i];
+                a[i]=temp;
+    }
+    for(int i=0;i<n;i++)
+    printf("The sorted array is : %d\n", a[i]);
+}
+
+void main(){
+    int n;
+    printf("Enter the number of elements in array");
+    scanf("%d", &n);
+    int a[n];
+    printf("Enter the number into array");
+    for(int i=0;i<n;i++){
+        scanf("%d", &a[i]);
+    }
+    selectsort(a,n);
+}
